@@ -4,12 +4,14 @@ This antenna can be ordered directly from PCBWAY by following this link:
 
   https://www.pcbway.com/project/shareproject/10_5GHz__X_Band__Patch_Antenna.html
   
-
+   
+   
 The edge mount 50 ohm SMA connector can be ordered here:
 
   https://www.digikey.com/product-detail/en/BU-1420701851/314-1703-ND/9950117/?itemSeq=310517966
   
-        
+   
+   
 PCB Fabrication options are:
 
   Size :	171 x 60 mm
