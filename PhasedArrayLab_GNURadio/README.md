@@ -1,0 +1,1 @@
+These are GNUradio flowgraphs to run the lab on.  They work great on a Raspberry Pi 3B+.  These files are probably a more updated version of the files found on the Raspberry Pi SD card image provided in the "Build Your Own" instructions.  
