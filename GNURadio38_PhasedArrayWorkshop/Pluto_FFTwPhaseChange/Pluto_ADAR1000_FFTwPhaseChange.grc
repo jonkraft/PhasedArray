@@ -1,0 +1,856 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: ''
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: BlankSpacerToFormatTab
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@0:2,0,4,5
+    label: '"  "'
+    type: string
+    value: '"  "'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [410, 753]
+    rotation: 0
+    state: enabled
+- name: Center_freq
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@0:0,0,1,5
+    label: Signal Freq (MHz)
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '10000'
+    step: '0.1'
+    stop: '11000'
+    value: '10510.0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [259, 82]
+    rotation: 0
+    state: enabled
+- name: Phase_Delta
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:0,1,1,5
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-199.6875'
+    step: '2.8125'
+    stop: '199.6875'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1134, 96]
+    rotation: 0
+    state: enabled
+- name: Rx1
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@1:1,0,1,1
+    label: ''
+    type: int
+    value: ((Phase_Delta*0+Rx1_Cal) % 360)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 14]
+    rotation: 0
+    state: enabled
+- name: Rx1_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:1,1,1,5
+    label: Rx1_Phase
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '2.8125'
+    stop: '357.1875'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [607, 93]
+    rotation: 0
+    state: enabled
+- name: Rx2
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@1:2,0,1,1
+    label: ''
+    type: int
+    value: ((Phase_Delta*1+Rx2_Cal) % 360)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [736, 14]
+    rotation: 0
+    state: enabled
+- name: Rx2_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:2,1,1,5
+    label: Rx2_Phase
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '2.8125'
+    stop: '357.1875'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [735, 93]
+    rotation: 0
+    state: enabled
+- name: Rx3
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@1:3,0,1,1
+    label: ''
+    type: int
+    value: ((Phase_Delta*2+Rx3_Cal) % 360)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 14]
+    rotation: 0
+    state: enabled
+- name: Rx3_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:3,1,1,5
+    label: Rx3_Phase
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '2.8125'
+    stop: '357.1875'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [871, 93]
+    rotation: 0
+    state: enabled
+- name: Rx4
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@1:4,0,1,1
+    label: ''
+    type: int
+    value: ((Phase_Delta*3+Rx4_Cal) % 360)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1008, 14]
+    rotation: 0
+    state: enabled
+- name: Rx4_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:4,1,1,5
+    label: Rx4_Phase
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '2.8125'
+    stop: '357.1875'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1007, 93]
+    rotation: 0
+    state: enabled
+- name: RxGain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@0:1,0,1,5
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '15'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [418, 95]
+    rotation: 0
+    state: enabled
+- name: TX_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '5.81'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [362, 14]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: int(40000000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 16]
+    rotation: 0
+    state: enabled
+- name: ControlTab
+  id: qtgui_tab_widget
+  parameters:
+    alias: ''
+    comment: ''
+    gui_hint: 7,0, 7,7
+    label0: Pluto Control
+    label1: ADAR1000 Phase Control
+    label10: Tab 10
+    label11: Tab 11
+    label12: Tab 12
+    label13: Tab 13
+    label14: Tab 14
+    label15: Tab 15
+    label16: Tab 16
+    label17: Tab 17
+    label18: Tab 18
+    label19: Tab 19
+    label2: Tab 2
+    label3: Tab 3
+    label4: Tab 4
+    label5: Tab 5
+    label6: Tab 6
+    label7: Tab 7
+    label8: Tab 8
+    label9: Tab 9
+    num_tabs: '2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [13, 115]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: int(10000)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 275]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    PhaseDelta: Phase_Delta
+    Rx1_Phase_Cal: Rx1_Cal
+    Rx2_Phase_Cal: Rx2_Cal
+    Rx3_Phase_Cal: Rx3_Cal
+    Rx4_Phase_Cal: Rx4_Cal
+    SignalFreq: int(Center_freq*1000000)
+    UpdateRate: '0.1'
+    _source_code: "# ADAR1000 Phase Control and Steering Angle Calculation\n\n'''\n\
+      Useful resources:\n    Introduction to Phased Array Antennas: https://www.analog.com/en/analog-dialogue/articles/phased-array-antenna-patterns-part1.html#\n\
+      \    Full workshop build instructions at www.github.com/jonkraft/phasedarray\n\
+      \    Analog Devices Python Interfaces:  https://analogdevicesinc.github.io/pyadi-iio/\n\
+      \    Python examples:  https://github.com/analogdevicesinc/pyadi-iio/tree/ensm-example/examples\n\
+      \    GNU Radio and IIO Devices:  https://wiki.analog.com/resources/tools-software/linux-software/gnuradio\n\
+      \    ADI Kuiper Linux for Raspberry Pi:  https://wiki.analog.com/resources/tools-software/linux-software/gnuradio\n\
+      '''\n\n# Copyright (C) 2019 Analog Devices, Inc.\n#\n# All rights reserved.\n\
+      #\n# Redistribution and use in source and binary forms, with or without modification,\n\
+      # are permitted provided that the following conditions are met:\n#     - Redistributions\
+      \ of source code must retain the above copyright\n#       notice, this list\
+      \ of conditions and the following disclaimer.\n#     - Redistributions in binary\
+      \ form must reproduce the above copyright\n#       notice, this list of conditions\
+      \ and the following disclaimer in\n#       the documentation and/or other materials\
+      \ provided with the\n#       distribution.\n#     - Neither the name of Analog\
+      \ Devices, Inc. nor the names of its\n#       contributors may be used to endorse\
+      \ or promote products derived\n#       from this software without specific prior\
+      \ written permission.\n#     - The use of this software may or may not infringe\
+      \ the patent rights\n#       of one or more patent holders.  This license does\
+      \ not release you\n#       from the requirement that you obtain separate licenses\
+      \ from these\n#       patent holders to use this software.\n#     - Use of the\
+      \ software either in source or binary form, must be run\n#       on or directly\
+      \ connected to an Analog Devices Inc. component.\n#\n# THIS SOFTWARE IS PROVIDED\
+      \ BY ANALOG DEVICES \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n# INCLUDING,\
+      \ BUT NOT LIMITED TO, NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A\n\
+      # PARTICULAR PURPOSE ARE DISCLAIMED.\n#\n# IN NO EVENT SHALL ANALOG DEVICES\
+      \ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n# EXEMPLARY, OR\
+      \ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, INTELLECTUAL PROPERTY\n\
+      # RIGHTS, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\
+      \ PROFITS; OR\n# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\
+      \ LIABILITY, WHETHER IN CONTRACT,\n# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\
+      \ OR OTHERWISE) ARISING IN ANY WAY OUT OF\n# THE USE OF THIS SOFTWARE, EVEN\
+      \ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nimport numpy as np\nimport\
+      \ time\nimport spidev\nfrom gnuradio import gr\n\nclass blk(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n\n    def\
+      \ __init__(self, PhaseDelta=45, SignalFreq=10525000000, UpdateRate=2, Rx1_Phase_Cal=0,\
+      \ Rx2_Phase_Cal=0, Rx3_Phase_Cal=0, Rx4_Phase_Cal=0):  # only default arguments\
+      \ here\n        \"\"\"arguments to this function show up as parameters in GRC\"\
+      \"\"\n        gr.sync_block.__init__(\n            self,\n            name='Calculate\
+      \ Steering Angle',   # will show up in GRC\n            in_sig=[],   # we have\
+      \ no flowgraph inputs to this block\n            out_sig=[np.float32]   # we\
+      \ have one flowgraph output, which is the calculated steering angle\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.UpdateRate\
+      \ = UpdateRate\n        self.PhaseDelta = PhaseDelta\n        self.Rx1_Phase_Cal\
+      \ = Rx1_Phase_Cal\n        self.Rx2_Phase_Cal = Rx2_Phase_Cal\n        self.Rx3_Phase_Cal\
+      \ = Rx3_Phase_Cal\n        self.Rx4_Phase_Cal = Rx4_Phase_Cal\n\n        # The\
+      \ ADDR is set by the address pins on the ADAR1000.  This is set by P10 on the\
+      \ eval board.\n        self.ADDR=0x20            # ADDR 0x20 is set by jumpering\
+      \ pins 4 and 6 on P10\n        #self.ADDR=0x00           # ADDR 0x00 is set\
+      \ by leaving all jumpers off of P10\n        \n        self.c = 299792458  \
+      \  # speed of light in m/s\n        self.d = 0.015        # element to element\
+      \ spacing of the antenna\n        self.f = SignalFreq\n               \n   \
+      \     self.spi = spidev.SpiDev()\n        self.spi.open(0, 0)  #set bus=0 and\
+      \ device=0\n        self.spi.max_speed_hz = 500000\n        self.spi.mode =\
+      \ 0\n\n        # Initialize the ADAR1000\n        self.spi.xfer2([self.ADDR,\
+      \ 0x00, 0x81])  # reset the device\n        self.spi.xfer2([self.ADDR, 0x00,\
+      \ 0x18])  # Sets SDO  pin to active (4 wire SPI)\n        self.spi.xfer2([self.ADDR+0x04,\
+      \ 0x00, 0x55])  # Trims LDO to 1.8V\n        self.spi.xfer2([self.ADDR, 0x38,\
+      \ 0x60])  # Bypasses beam and bias RAM (use SPI for gain/phase)\n        self.spi.xfer2([self.ADDR,\
+      \ 0x2E, 0x7F])  # Enables all 4 Rx channels, LNA, VGA, and Vector Mod\n    \
+      \    self.spi.xfer2([self.ADDR, 0x34, 0x08])  # Sets LNA bias to middle of its\
+      \ range\n        self.spi.xfer2([self.ADDR, 0x35, 0x16])  # Sets VGA bias to\
+      \ [0010] and vector mod bias to [110]\n        self.spi.xfer2([self.ADDR, 0x31,\
+      \ 0x20])  # Enables the whole Rx\n\n        # Write registers to set Rx1-4 to\
+      \ Max Gain\n        self.spi.xfer2([self.ADDR, 0x10, 0xFF])  # Sets Rx1 to max\
+      \ gain\n        self.spi.xfer2([self.ADDR, 0x11, 0xFF])  # Sets Rx2 to max gain\n\
+      \        self.spi.xfer2([self.ADDR, 0x12, 0xFF])  # Sets Rx3 to max gain\n \
+      \       self.spi.xfer2([self.ADDR, 0x13, 0xFF])  # Sets Rx4 to max gain\n\n\
+      \    def work(self, input_items, output_items):\n        # steering angle theta\
+      \ = arcsin(c*deltaphase/(2*pi*f*d)\n        # if element spacing is lambda/2\
+      \ then this simplifies to theta=arcsin(deltaphase(in radians)/pi)\n        value1\
+      \ = (self.c * np.radians(np.abs(self.PhaseDelta)))/(2*3.14159*self.f*self.d)\n\
+      \        clamped_value1 = max(min(1, value1), -1)     #arcsin argument must\
+      \ be between 1 and -1, or numpy will throw a warning\n        theta = np.degrees(np.arcsin(clamped_value1))\n\
+      \        if self.PhaseDelta>=0:\n            SteerAngle = 90-theta   # positive\
+      \ PhaseDelta covers 0deg to 90 deg\n        else:\n            SteerAngle =\
+      \ 90+theta # negative phase delta covers 0 deg to -90 deg\n            \n  \
+      \      step_size = 2.8125\n        Phase_A = ((np.rint(self.PhaseDelta*0/step_size)*step_size)\
+      \ + self.Rx1_Phase_Cal) % 360\n        Phase_B = ((np.rint(self.PhaseDelta*1/step_size)*step_size)\
+      \ + self.Rx2_Phase_Cal) % 360\n        Phase_C = ((np.rint(self.PhaseDelta*2/step_size)*step_size)\
+      \ + self.Rx3_Phase_Cal) % 360\n        Phase_D = ((np.rint(self.PhaseDelta*3/step_size)*step_size)\
+      \ + self.Rx4_Phase_Cal) % 360\n        channels = [Phase_A, Phase_B, Phase_C,\
+      \ Phase_D]\n\n        # Write vector I and Q to set Rx1 (see Table 13 in ADAR1000\
+      \ datasheet)\n        i=1\n        for Channel_Phase in channels:\n        \
+      \    #Channel_Phase = self.Rx1_phase     # Which Rx phase control channel are\
+      \ we looking at?\n            if i==1:\n                I = 0x14   # Rx1_I vector\
+      \ register address = 0x14\n                Q = 0x15   # Rx1_Q vector register\
+      \ address = 0x15\n            if i==2:\n                I = 0x16   # Rx2_I vector\
+      \ register address = 0x16\n                Q = 0x17   # Rx2_Q vector register\
+      \ address = 0x17\n            if i==3:\n                I = 0x18   # Rx3_I vector\
+      \ register address = 0x18\n                Q = 0x19   # Rx3_Q vector register\
+      \ address = 0x19\n            if i==4:\n                I = 0x1A   # Rx4_I vector\
+      \ register address = 0x1A\n                Q = 0x1B   # Rx4_Q vector register\
+      \ address = 0x1B\n            i = i+1\n\n            # See Table 13 in the ADAR1000\
+      \ datasheet\n            # Quadrant 1\n            if Channel_Phase==0:\n  \
+      \              self.spi.xfer2([self.ADDR, I, 0x3F])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x20])\n            if Channel_Phase==2.8125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3F])\n                self.spi.xfer2([self.ADDR, Q, 0x21])\n        \
+      \    if Channel_Phase==5.625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3F])\n                self.spi.xfer2([self.ADDR, Q, 0x23])\n           \
+      \ if Channel_Phase==8.4375:\n                self.spi.xfer2([self.ADDR, I, 0x3F])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x24])\n            if Channel_Phase==11.25:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x3F])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x26])\n            if Channel_Phase==14.0625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3E])\n                self.spi.xfer2([self.ADDR, Q, 0x27])\n        \
+      \    if Channel_Phase==16.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3E])\n                self.spi.xfer2([self.ADDR, Q, 0x28])\n           \
+      \ if Channel_Phase==19.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3D])\n                self.spi.xfer2([self.ADDR, Q, 0x2A])\n           \
+      \ if Channel_Phase==22.5:\n                self.spi.xfer2([self.ADDR, I, 0x3D])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x2B])\n            if Channel_Phase==25.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x3C])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x2D])\n            if Channel_Phase==28.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3C])\n                self.spi.xfer2([self.ADDR, Q, 0x2E])\n        \
+      \    if Channel_Phase==30.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3B])\n                self.spi.xfer2([self.ADDR, Q, 0x2F])\n        \
+      \    if Channel_Phase==33.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3A])\n                self.spi.xfer2([self.ADDR, Q, 0x30])\n           \
+      \ if Channel_Phase==36.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x39])\n                self.spi.xfer2([self.ADDR, Q, 0x31])\n           \
+      \ if Channel_Phase==39.375:\n                self.spi.xfer2([self.ADDR, I, 0x38])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x33])\n            if Channel_Phase==42.1875:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x37])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x34])\n            if Channel_Phase==45:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x36])\n                self.spi.xfer2([self.ADDR, Q, 0x35])\n        \
+      \    if Channel_Phase==47.8125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x35])\n                self.spi.xfer2([self.ADDR, Q, 0x36])\n        \
+      \    if Channel_Phase==50.625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x34])\n                self.spi.xfer2([self.ADDR, Q, 0x37])\n           \
+      \ if Channel_Phase==53.4375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x33])\n                self.spi.xfer2([self.ADDR, Q, 0x38])\n           \
+      \ if Channel_Phase==56.25:\n                self.spi.xfer2([self.ADDR, I, 0x32])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x38])\n            if Channel_Phase==59.0625:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x30])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x39])\n            if Channel_Phase==61.875:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x2F])\n                self.spi.xfer2([self.ADDR, Q, 0x3A])\n        \
+      \    if Channel_Phase==64.6875:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x2E])\n                self.spi.xfer2([self.ADDR, Q, 0x3A])\n        \
+      \    if Channel_Phase==67.5:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x2C])\n                self.spi.xfer2([self.ADDR, Q, 0x3B])\n           \
+      \ if Channel_Phase==70.3125:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x2B])\n                self.spi.xfer2([self.ADDR, Q, 0x3C])\n           \
+      \ if Channel_Phase==73.125:\n                self.spi.xfer2([self.ADDR, I, 0x2A])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x3C])\n            if Channel_Phase==75.9375:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x28])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x3C])\n            if Channel_Phase==78.75:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x27])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n        \
+      \    if Channel_Phase==81.5625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x25])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n        \
+      \    if Channel_Phase==84.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x24])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n           \
+      \ if Channel_Phase==87.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x22])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n           \
+      \     \n        # Quadrant 2\n            if Channel_Phase==90:\n          \
+      \      self.spi.xfer2([self.ADDR, I, 0x21])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x3D])\n            if Channel_Phase==92.8125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x01])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n        \
+      \    if Channel_Phase==95.625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x03])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n           \
+      \ if Channel_Phase==98.4375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x04])\n                self.spi.xfer2([self.ADDR, Q, 0x3D])\n           \
+      \ if Channel_Phase==101.25:\n                self.spi.xfer2([self.ADDR, I, 0x06])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x3D])\n            if Channel_Phase==104.0625:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x07])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x3C])\n            if Channel_Phase==106.875:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x08])\n                self.spi.xfer2([self.ADDR, Q, 0x3C])\n        \
+      \    if Channel_Phase==109.6875:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x0A])\n                self.spi.xfer2([self.ADDR, Q, 0x3C])\n        \
+      \    if Channel_Phase==112.5:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0B])\n                self.spi.xfer2([self.ADDR, Q, 0x3B])\n           \
+      \ if Channel_Phase==115.3125:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0D])\n                self.spi.xfer2([self.ADDR, Q, 0x3A])\n           \
+      \ if Channel_Phase==118.125:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0E])\n                self.spi.xfer2([self.ADDR, Q, 0x3A])\n           \
+      \ if Channel_Phase==120.9375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0F])\n                self.spi.xfer2([self.ADDR, Q, 0x39])\n           \
+      \ if Channel_Phase==123.75:\n                self.spi.xfer2([self.ADDR, I, 0x11])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x38])\n            if Channel_Phase==126.5625:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x12])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x38])\n            if Channel_Phase==129.375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x13])\n                self.spi.xfer2([self.ADDR, Q, 0x37])\n        \
+      \    if Channel_Phase==132.1875:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x14])\n                self.spi.xfer2([self.ADDR, Q, 0x36])\n        \
+      \    if Channel_Phase==135:\n                self.spi.xfer2([self.ADDR, I, 0x16])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x35])\n            if Channel_Phase==137.8125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x17])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x34])\n            if Channel_Phase==140.625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x18])\n                self.spi.xfer2([self.ADDR, Q, 0x33])\n        \
+      \    if Channel_Phase==143.4375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x19])\n                self.spi.xfer2([self.ADDR, Q, 0x31])\n        \
+      \    if Channel_Phase==146.25:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x19])\n                self.spi.xfer2([self.ADDR, Q, 0x30])\n           \
+      \ if Channel_Phase==149.0625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1A])\n                self.spi.xfer2([self.ADDR, Q, 0x2F])\n           \
+      \ if Channel_Phase==151.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1B])\n                self.spi.xfer2([self.ADDR, Q, 0x2E])\n           \
+      \ if Channel_Phase==154.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1C])\n                self.spi.xfer2([self.ADDR, Q, 0x2D])\n           \
+      \ if Channel_Phase==157.5:\n                self.spi.xfer2([self.ADDR, I, 0x1C])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x2B])\n            if Channel_Phase==160.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x1D])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x2A])\n            if Channel_Phase==163.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0X1E])\n                self.spi.xfer2([self.ADDR, Q, 0x28])\n        \
+      \    if Channel_Phase==165.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1E])\n                self.spi.xfer2([self.ADDR, Q, 0x27])\n        \
+      \    if Channel_Phase==168.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1E])\n                self.spi.xfer2([self.ADDR, Q, 0x26])\n           \
+      \ if Channel_Phase==171.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x24])\n           \
+      \ if Channel_Phase==174.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x23])\n           \
+      \ if Channel_Phase==177.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x21])\n           \
+      \     \n        # Quadrant 3\n            if Channel_Phase==180:\n         \
+      \       self.spi.xfer2([self.ADDR, I, 0x1F])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x20])\n            if Channel_Phase==182.8125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x20])\n        \
+      \    if Channel_Phase==185.625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x03])\n        \
+      \    if Channel_Phase==188.4375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x04])\n        \
+      \    if Channel_Phase==191.25:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1F])\n                self.spi.xfer2([self.ADDR, Q, 0x06])\n           \
+      \ if Channel_Phase==194.0625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1E])\n                self.spi.xfer2([self.ADDR, Q, 0x07])\n           \
+      \ if Channel_Phase==196.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1E])\n                self.spi.xfer2([self.ADDR, Q, 0x08])\n           \
+      \ if Channel_Phase==199.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1D])\n                self.spi.xfer2([self.ADDR, Q, 0x0A])\n           \
+      \ if Channel_Phase==202.5:\n                self.spi.xfer2([self.ADDR, I, 0x1D])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x0B])\n            if Channel_Phase==205.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x1C])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x0D])\n            if Channel_Phase==208.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1C])\n                self.spi.xfer2([self.ADDR, Q, 0x0E])\n        \
+      \    if Channel_Phase==210.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x1B])\n                self.spi.xfer2([self.ADDR, Q, 0x0F])\n        \
+      \    if Channel_Phase==213.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x1A])\n                self.spi.xfer2([self.ADDR, Q, 0x10])\n           \
+      \ if Channel_Phase==216.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x19])\n                self.spi.xfer2([self.ADDR, Q, 0x11])\n           \
+      \ if Channel_Phase==219.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x18])\n                self.spi.xfer2([self.ADDR, Q, 0x13])\n           \
+      \ if Channel_Phase==222.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x17])\n                self.spi.xfer2([self.ADDR, Q, 0x14])\n           \
+      \ if Channel_Phase==225:\n                self.spi.xfer2([self.ADDR, I, 0x16])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x15])\n            if Channel_Phase==227.8125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x15])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x16])\n            if Channel_Phase==230.625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x14])\n                self.spi.xfer2([self.ADDR, Q, 0x17])\n        \
+      \    if Channel_Phase==233.4375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x13])\n                self.spi.xfer2([self.ADDR, Q, 0x18])\n        \
+      \    if Channel_Phase==236.25:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x12])\n                self.spi.xfer2([self.ADDR, Q, 0x18])\n           \
+      \ if Channel_Phase==239.0625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x10])\n                self.spi.xfer2([self.ADDR, Q, 0x19])\n           \
+      \ if Channel_Phase==241.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0F])\n                self.spi.xfer2([self.ADDR, Q, 0x1A])\n           \
+      \ if Channel_Phase==244.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x0E])\n                self.spi.xfer2([self.ADDR, Q, 0x1A])\n           \
+      \ if Channel_Phase==247.5:\n                self.spi.xfer2([self.ADDR, I, 0x0C])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x1B])\n            if Channel_Phase==250.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x0B])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x1C])\n            if Channel_Phase==253.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x0A])\n                self.spi.xfer2([self.ADDR, Q, 0x1C])\n        \
+      \    if Channel_Phase==255.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x08])\n                self.spi.xfer2([self.ADDR, Q, 0x1C])\n        \
+      \    if Channel_Phase==258.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x07])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n           \
+      \ if Channel_Phase==261.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x05])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n           \
+      \ if Channel_Phase==264.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x04])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n           \
+      \ if Channel_Phase==267.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x02])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n        \n \
+      \       # Quadrant 4\n            if Channel_Phase==270:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x01])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n        \
+      \    if Channel_Phase==272.8125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x21])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n        \
+      \    if Channel_Phase==275.625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x23])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n        \
+      \    if Channel_Phase==278.4375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x24])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n        \
+      \    if Channel_Phase==281.25:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x26])\n                self.spi.xfer2([self.ADDR, Q, 0x1D])\n           \
+      \ if Channel_Phase==284.0625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x27])\n                self.spi.xfer2([self.ADDR, Q, 0x1C])\n           \
+      \ if Channel_Phase==286.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x28])\n                self.spi.xfer2([self.ADDR, Q, 0x1C])\n           \
+      \ if Channel_Phase==289.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x2A])\n                self.spi.xfer2([self.ADDR, Q, 0x1C])\n           \
+      \ if Channel_Phase==292.5:\n                self.spi.xfer2([self.ADDR, I, 0x2B])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x1B])\n            if Channel_Phase==295.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x2D])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x1A])\n            if Channel_Phase==298.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x2E])\n                self.spi.xfer2([self.ADDR, Q, 0x1A])\n        \
+      \    if Channel_Phase==300.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x2F])\n                self.spi.xfer2([self.ADDR, Q, 0x19])\n        \
+      \    if Channel_Phase==303.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x31])\n                self.spi.xfer2([self.ADDR, Q, 0x18])\n           \
+      \ if Channel_Phase==306.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x32])\n                self.spi.xfer2([self.ADDR, Q, 0x18])\n           \
+      \ if Channel_Phase==309.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x33])\n                self.spi.xfer2([self.ADDR, Q, 0x17])\n           \
+      \ if Channel_Phase==312.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x34])\n                self.spi.xfer2([self.ADDR, Q, 0x16])\n           \
+      \ if Channel_Phase==315:\n                self.spi.xfer2([self.ADDR, I, 0x36])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x15])\n            if Channel_Phase==317.8125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x37])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x14])\n            if Channel_Phase==320.625:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x38])\n                self.spi.xfer2([self.ADDR, Q, 0x13])\n        \
+      \    if Channel_Phase==323.4375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x39])\n                self.spi.xfer2([self.ADDR, Q, 0x11])\n        \
+      \    if Channel_Phase==326.25:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x39])\n                self.spi.xfer2([self.ADDR, Q, 0x10])\n           \
+      \ if Channel_Phase==329.0625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3A])\n                self.spi.xfer2([self.ADDR, Q, 0x0F])\n           \
+      \ if Channel_Phase==331.875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3B])\n                self.spi.xfer2([self.ADDR, Q, 0x0E])\n           \
+      \ if Channel_Phase==334.6875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3C])\n                self.spi.xfer2([self.ADDR, Q, 0x0D])\n           \
+      \ if Channel_Phase==337.5:\n                self.spi.xfer2([self.ADDR, I, 0x3C])\n\
+      \                self.spi.xfer2([self.ADDR, Q, 0x0B])\n            if Channel_Phase==340.3125:\n\
+      \                self.spi.xfer2([self.ADDR, I, 0x3D])\n                self.spi.xfer2([self.ADDR,\
+      \ Q, 0x0A])\n            if Channel_Phase==343.125:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3E])\n                self.spi.xfer2([self.ADDR, Q, 0x08])\n        \
+      \    if Channel_Phase==345.9375:\n                self.spi.xfer2([self.ADDR,\
+      \ I, 0x3E])\n                self.spi.xfer2([self.ADDR, Q, 0x07])\n        \
+      \    if Channel_Phase==348.75:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3E])\n                self.spi.xfer2([self.ADDR, Q, 0x06])\n           \
+      \ if Channel_Phase==351.5625:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3F])\n                self.spi.xfer2([self.ADDR, Q, 0x04])\n           \
+      \ if Channel_Phase==354.375:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3F])\n                self.spi.xfer2([self.ADDR, Q, 0x03])\n           \
+      \ if Channel_Phase==357.1875:\n                self.spi.xfer2([self.ADDR, I,\
+      \ 0x3F])\n                self.spi.xfer2([self.ADDR, Q, 0x01])\n           \
+      \     \n        self.spi.xfer2([self.ADDR, 0x28, 0x01])  # Loads Rx vectors\
+      \ from SPI.\n        time.sleep(self.UpdateRate)\n        output_items[0][:]\
+      \ = SteerAngle * (-1) + 90\n        \n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Calculate Steering Angle', 'blk', [('PhaseDelta', '45'), ('SignalFreq',
+      '10525000000'), ('UpdateRate', '2'), ('Rx1_Phase_Cal', '0'), ('Rx2_Phase_Cal',
+      '0'), ('Rx3_Phase_Cal', '0'), ('Rx4_Phase_Cal', '0')], [], [('0', 'float', 1)],
+      'arguments to this function show up as parameters in GRC', ['PhaseDelta', 'Rx1_Phase_Cal',
+      'Rx2_Phase_Cal', 'Rx3_Phase_Cal', 'Rx4_Phase_Cal', 'UpdateRate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [809, 366]
+    rotation: 0
+    state: enabled
+- name: iio_pluto_sink_0
+  id: iio_pluto_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    attenuation1: '3'
+    auto_filter: 'True'
+    bandwidth: '20000000'
+    buffer_size: '32768'
+    comment: ''
+    cyclic: 'True'
+    filter: ''
+    frequency: int(TX_freq*1000000000)
+    samplerate: int(samp_rate)
+    uri: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [278, 253]
+    rotation: 0
+    state: true
+- name: iio_pluto_source_0
+  id: iio_pluto_source
+  parameters:
+    affinity: ''
+    alias: ''
+    auto_filter: 'True'
+    bandwidth: '20000000'
+    bbdc: 'True'
+    buffer_size: '32768'
+    comment: ''
+    filter: ''
+    frequency: int(Center_freq*1000000-TX_freq*1000000000)
+    gain1: '''manual'''
+    manual_gain1: int(RxGain)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    quadrature: 'True'
+    rfdc: 'True'
+    samplerate: int(samp_rate)
+    uri: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [486, 241]
+    rotation: 0
+    state: true
+- name: qtgui_number_sink_1
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_HORIZ
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    max: '90'
+    min: '-90'
+    name: SteeringAngle
+    nconnections: '1'
+    type: float
+    unit1: deg
+    unit10: ''
+    unit2: ''
+    unit3: ''
+    unit4: ''
+    unit5: ''
+    unit6: ''
+    unit7: ''
+    unit8: ''
+    unit9: ''
+    update_time: '0.10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1105, 400]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: int(samp_rate)
+    comment: ''
+    fc: int(Center_freq*1000000)
+    fftsize: '1024'
+    gui_hint: 0, 0, 6, 8
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'False'
+    rate: '10'
+    showports: 'True'
+    showrf: 'False'
+    type: complex
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1102, 243]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_sig_source_x_1, '0', iio_pluto_sink_0, '0']
+- [epy_block_0, '0', qtgui_number_sink_1, '0']
+- [iio_pluto_source_0, '0', qtgui_sink_x_0, '0']
+
+metadata:
+  file_format: 1

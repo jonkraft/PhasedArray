@@ -1,0 +1,1067 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Beamformer_Ex4
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: BW
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@3:0,0
+    label: Signal BW (MHz)
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '100'
+    stop: '2000'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [980, 256]
+    rotation: 0
+    state: enabled
+- name: BeamTaper
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': '0'
+    gui_hint: ControlTab@1:4,0
+    label: Set All Element Gains to Max (127)
+    'true': '1'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1247, 16]
+    rotation: 0
+    state: enabled
+- name: Center_freq
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@0:0,0,1,2
+    label: Signal Freq (MHz)
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '10000'
+    step: '0.1'
+    stop: '11000'
+    value: '10508.0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [187, 109]
+    rotation: 0
+    state: enabled
+- name: IgnorePhaseCals
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': '0'
+    gui_hint: ControlTab@2:4,0,1,2
+    label: Set All Phase Cals to 0 deg
+    'true': '1'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1064, 124]
+    rotation: 0
+    state: enabled
+- name: Rx1Gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:0,0,1,2
+    label: ''
+    min_len: '20'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '127'
+    value: '127'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 20]
+    rotation: 0
+    state: enabled
+- name: Rx1_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@2:0,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-180'
+    step: '2.8125'
+    stop: '180'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 132]
+    rotation: 0
+    state: enabled
+- name: Rx2Gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:1,0,1,2
+    label: ''
+    min_len: '20'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '127'
+    value: '127'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 20]
+    rotation: 0
+    state: enabled
+- name: Rx2_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@2:1,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-180'
+    step: '2.8125'
+    stop: '180'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 132]
+    rotation: 0
+    state: enabled
+- name: Rx3Gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:2,0,1,2
+    label: ''
+    min_len: '20'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '127'
+    value: '127'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [784, 20]
+    rotation: 0
+    state: enabled
+- name: Rx3_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@2:2,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-180'
+    step: '2.8125'
+    stop: '180'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [784, 132]
+    rotation: 0
+    state: enabled
+- name: Rx4Gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@1:3,0,1,2
+    label: ''
+    min_len: '20'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '127'
+    value: '127'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 20]
+    rotation: 0
+    state: enabled
+- name: Rx4_Cal
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@2:3,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-180'
+    step: '2.8125'
+    stop: '180'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 132]
+    rotation: 0
+    state: enabled
+- name: Rx_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@0:1,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '20'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [355, 15]
+    rotation: 0
+    state: enabled
+- name: SymmetricTaper
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': '0'
+    gui_hint: ControlTab@1:5,0
+    label: Set Rx4Gain = Rx1Gain (Symmetric Taper)
+    'true': '1'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1062, 14]
+    rotation: 0
+    state: enabled
+- name: Times_To_Average
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ControlTab@0:2,0,1,2
+    label: ''
+    min_len: '10'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '1'
+    step: '1'
+    stop: '50'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [353, 128]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '40000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [197, 18]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:1,0
+    label: Received Signal (MHz)
+    type: raw
+    value: ("%d" % (Center_freq)).rjust(20)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 251]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:2,0
+    label: Mixer LO (MHz)
+    type: string
+    value: ("%d" % (5810)).rjust(32)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 323]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0_0_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:3,0
+    label: Pluto Rx LO (MHz)
+    type: string
+    value: ("%d" % ((Center_freq - 5810))).rjust(27)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 395]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0_0_0_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:4,0
+    label: Signal BW (MHz)
+    type: string
+    value: ("%d" % (BW)).rjust(28)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 467]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0_0_0_0_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:5,0
+    label: Beam Weights Calc at (MHz)
+    type: string
+    value: ("%d" % ((Center_freq-BW))).rjust(10)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 539]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_label_0_0_0_0_0_0
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ControlTab@3:6,0
+    label: Angle Measured at (MHz)
+    type: string
+    value: ("%d" % (Center_freq)).rjust(16)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1141, 611]
+    rotation: 0
+    state: enabled
+- name: ControlTab
+  id: qtgui_tab_widget
+  parameters:
+    alias: ''
+    comment: ''
+    gui_hint: 0,0,6,2
+    label0: Pluto_Controls
+    label1: Gain
+    label10: Tab 10
+    label11: Tab 11
+    label12: Tab 12
+    label13: Tab 13
+    label14: Tab 14
+    label15: Tab 15
+    label16: Tab 16
+    label17: Tab 17
+    label18: Tab 18
+    label19: Tab 19
+    label2: Phase
+    label3: Bandwidth
+    label4: Tab 4
+    label5: Tab 5
+    label6: Tab 6
+    label7: Tab 7
+    label8: Tab 8
+    label9: Tab 9
+    num_tabs: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [30, 117]
+    rotation: 0
+    state: enabled
+- name: blocks_moving_average_xx_0
+  id: blocks_moving_average_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    length: '1000'
+    max_iter: samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '0.001'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [469, 488]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [239, 510]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    Averages: int(Times_To_Average)
+    LO_freq: int(Center_freq*1000000 - 5810000000)
+    PhaseCal: int(IgnorePhaseCals)
+    Rx1_cal: Rx1_Cal
+    Rx2_cal: Rx2_Cal
+    Rx3_cal: Rx3_Cal
+    Rx4_cal: Rx4_Cal
+    RxGain1: int(Rx1Gain)
+    RxGain2: int(Rx2Gain)
+    RxGain3: int(Rx3Gain)
+    RxGain4: int(Rx4Gain)
+    Rx_gain: int(Rx_gain)
+    SDR_ip: '''ip:192.168.2.1'''
+    SampleRate: int(samp_rate)
+    SignalFreq: int((Center_freq-BW)*1000000)
+    SymTaper: int(SymmetricTaper)
+    TX_freq: '5810000000'
+    Taper: int(BeamTaper)
+    _source_code: "# ADAR1000 Phase Sweeper and Pluto data collection\n\n'''\nUseful\
+      \ resources:\n    Introduction to Phased Array Antennas: https://www.analog.com/en/analog-dialogue/articles/phased-array-antenna-patterns-part1.html#\n\
+      \    Full workshop build instructions at www.github.com/jonkraft/phasedarray\n\
+      \    Analog Devices Python Interfaces:  https://analogdevicesinc.github.io/pyadi-iio/\n\
+      \    Python examples:  https://github.com/analogdevicesinc/pyadi-iio/tree/ensm-example/examples\n\
+      \    GNU Radio and IIO Devices:  https://wiki.analog.com/resources/tools-software/linux-software/gnuradio\n\
+      \    ADI Kuiper Linux for Raspberry Pi:  https://wiki.analog.com/resources/tools-software/linux-software/gnuradio\n\
+      '''\n\n# Copyright (C) 2019 Analog Devices, Inc.\n#\n# All rights reserved.\n\
+      #\n# Redistribution and use in source and binary forms, with or without modification,\n\
+      # are permitted provided that the following conditions are met:\n#     - Redistributions\
+      \ of source code must retain the above copyright\n#       notice, this list\
+      \ of conditions and the following disclaimer.\n#     - Redistributions in binary\
+      \ form must reproduce the above copyright\n#       notice, this list of conditions\
+      \ and the following disclaimer in\n#       the documentation and/or other materials\
+      \ provided with the\n#       distribution.\n#     - Neither the name of Analog\
+      \ Devices, Inc. nor the names of its\n#       contributors may be used to endorse\
+      \ or promote products derived\n#       from this software without specific prior\
+      \ written permission.\n#     - The use of this software may or may not infringe\
+      \ the patent rights\n#       of one or more patent holders.  This license does\
+      \ not release you\n#       from the requirement that you obtain separate licenses\
+      \ from these\n#       patent holders to use this software.\n#     - Use of the\
+      \ software either in source or binary form, must be run\n#       on or directly\
+      \ connected to an Analog Devices Inc. component.\n#\n# THIS SOFTWARE IS PROVIDED\
+      \ BY ANALOG DEVICES \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n# INCLUDING,\
+      \ BUT NOT LIMITED TO, NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A\n\
+      # PARTICULAR PURPOSE ARE DISCLAIMED.\n#\n# IN NO EVENT SHALL ANALOG DEVICES\
+      \ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n# EXEMPLARY, OR\
+      \ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, INTELLECTUAL PROPERTY\n\
+      # RIGHTS, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\
+      \ PROFITS; OR\n# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\
+      \ LIABILITY, WHETHER IN CONTRACT,\n# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\
+      \ OR OTHERWISE) ARISING IN ANY WAY OUT OF\n# THE USE OF THIS SOFTWARE, EVEN\
+      \ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nimport numpy as np\nimport\
+      \ time\nimport spidev\nfrom gnuradio import gr\nimport sys\n\nsys.path.append('/usr/lib/python2.7/site-packages/')\n\
+      sys.path.append('/lib/python3.7/site-packages/')\n#import iio          # see\
+      \ temporary issue here https://ez.analog.com/sw-interface-tools/f/q-a/534115/pyadi-iio-operation-in-gnuradio-3-8\n\
+      import iiopy as iio  # this is a temporary workaround due to a conflict between\
+      \ gr-iio and pyadi-iio\nimport adi\n\ndef ADAR_init(spi, ADDR):\n    # Initialize\
+      \ the ADAR1000\n    spi.xfer2([ADDR, 0x00, 0x81])  # reset the device\n    spi.xfer2([ADDR,\
+      \ 0x00, 0x18])  # Sets SDO  pin to active (4 wire SPI)\n    spi.xfer2([ADDR+0x04,\
+      \ 0x00, 0x55])  # Trims LDO to 1.8V\n    spi.xfer2([ADDR, 0x38, 0x60])  # Bypasses\
+      \ beam and bias RAM (use SPI for gain/phase)\n    spi.xfer2([ADDR, 0x2E, 0x7F])\
+      \  # Enables all 4 Rx channels, LNA, VGA, and Vector Mod\n    spi.xfer2([ADDR,\
+      \ 0x34, 0x08])  # Sets LNA bias to middle of its range\n    spi.xfer2([ADDR,\
+      \ 0x35, 0x16])  # Sets VGA bias to [0010] and vector mod bias to [110]\n   \
+      \ spi.xfer2([ADDR, 0x31, 0xB0])  # Enables the whole Rx and sets the ADTR1107\
+      \ switch high (Rx mode)\n    spi.xfer2([ADDR, 0x10, int(128+127)])  # Sets Rx1\
+      \ VGA gain\n    spi.xfer2([ADDR, 0x11, int(128+127)])  # Sets Rx2 VGA gain\n\
+      \    spi.xfer2([ADDR, 0x12, int(128+127)])  # Sets Rx3 VGA gain\n    spi.xfer2([ADDR,\
+      \ 0x13, int(128+127)])  # Sets Rx4 VGA gain\n\ndef ADAR_set_RxTaper(spi, ADDR,\
+      \ RxGain1, RxGain2, RxGain3, RxGain4):\n    # set the ADAR1000's VGA gain of\
+      \ each of the Rx channels.  RxGainx needs to be between 0 and 127\n    spi.xfer2([ADDR,\
+      \ 0x10, int(128+RxGain1)])  # Sets Rx1 VGA gain\n    spi.xfer2([ADDR, 0x11,\
+      \ int(128+RxGain2)])  # Sets Rx2 VGA gain\n    spi.xfer2([ADDR, 0x12, int(128+RxGain3)])\
+      \  # Sets Rx3 VGA gain\n    spi.xfer2([ADDR, 0x13, int(128+RxGain4)])  # Sets\
+      \ Rx4 VGA gain\n\ndef ADAR_set_RxPhase(spi, address, num_ADARs, PhDelta, phase_step_size,\
+      \ RxPhase1, RxPhase2, RxPhase3, RxPhase4):\n    step_size = phase_step_size\
+      \  #2.8125\n    Phase_A = ((np.rint(PhDelta*0/step_size)*step_size) + RxPhase1)\
+      \ % 360\n    Phase_B = ((np.rint(PhDelta*1/step_size)*step_size) + RxPhase2)\
+      \ % 360\n    Phase_C = ((np.rint(PhDelta*2/step_size)*step_size) + RxPhase3)\
+      \ % 360\n    Phase_D = ((np.rint(PhDelta*3/step_size)*step_size) + RxPhase4)\
+      \ % 360\n    if num_ADARs == 2:\n        Phase_A = ((np.rint(PhDelta*4/step_size)*step_size)\
+      \ + RxPhase1) % 360\n        Phase_B = ((np.rint(PhDelta*5/step_size)*step_size)\
+      \ + RxPhase2) % 360\n        Phase_C = ((np.rint(PhDelta*6/step_size)*step_size)\
+      \ + RxPhase3) % 360\n        Phase_D = ((np.rint(PhDelta*7/step_size)*step_size)\
+      \ + RxPhase4) % 360\n    channels = [Phase_A, Phase_B, Phase_C, Phase_D]\n\n\
+      \    # Write vector I and Q to set phase shift (see Table 13 in ADAR1000 datasheet)\n\
+      \    i=1\n    for Channel_Phase in channels:\n        #round_Phase = np.rint(Channel_Phase/step_size)*step_size\n\
+      \        if i==1:\n            I = 0x14   # Rx1_I vector register address =\
+      \ 0x14\n            Q = 0x15   # Rx1_Q vector register address = 0x15\n    \
+      \    if i==2:\n            I = 0x16   # Rx2_I vector register address = 0x16\n\
+      \            Q = 0x17   # Rx2_Q vector register address = 0x17\n        if i==3:\n\
+      \            I = 0x18   # Rx3_I vector register address = 0x18\n           \
+      \ Q = 0x19   # Rx3_Q vector register address = 0x19\n        if i==4:\n    \
+      \        I = 0x1A   # Rx4_I vector register address = 0x1A\n            Q =\
+      \ 0x1B   # Rx4_Q vector register address = 0x1B\n        ADAR_write_RxPhase(spi,\
+      \ address, Channel_Phase, I, Q)\n        i = i+1\n    spi.xfer2([address, 0x28,\
+      \ 0x01])  # Loads Rx vectors from SPI.  0x08 is all ADAR1000 devices\n\ndef\
+      \ ADAR_write_RxPhase(spi, ADDR, Channel_Phase, I, Q):\n    # See Table 13 in\
+      \ the ADAR1000 datasheet\n    # Quadrant 1\n    if Channel_Phase==0:\n     \
+      \   spi.xfer2([ADDR, I, 0x3F])\n        spi.xfer2([ADDR, Q, 0x20])\n    if Channel_Phase==2.8125:\n\
+      \        spi.xfer2([ADDR, I, 0x3F])\n        spi.xfer2([ADDR, Q, 0x21])\n  \
+      \  if Channel_Phase==5.625:\n        spi.xfer2([ADDR, I, 0x3F])\n        spi.xfer2([ADDR,\
+      \ Q, 0x23])\n    if Channel_Phase==8.4375:\n        spi.xfer2([ADDR, I, 0x3F])\n\
+      \        spi.xfer2([ADDR, Q, 0x24])\n    if Channel_Phase==11.25:\n        spi.xfer2([ADDR,\
+      \ I, 0x3F])\n        spi.xfer2([ADDR, Q, 0x26])\n    if Channel_Phase==14.0625:\n\
+      \        spi.xfer2([ADDR, I, 0x3E])\n        spi.xfer2([ADDR, Q, 0x27])\n  \
+      \  if Channel_Phase==16.875:\n        spi.xfer2([ADDR, I, 0x3E])\n        spi.xfer2([ADDR,\
+      \ Q, 0x28])\n    if Channel_Phase==19.6875:\n        spi.xfer2([ADDR, I, 0x3D])\n\
+      \        spi.xfer2([ADDR, Q, 0x2A])\n    if Channel_Phase==22.5:\n        spi.xfer2([ADDR,\
+      \ I, 0x3D])\n        spi.xfer2([ADDR, Q, 0x2B])\n    if Channel_Phase==25.3125:\n\
+      \        spi.xfer2([ADDR, I, 0x3C])\n        spi.xfer2([ADDR, Q, 0x2D])\n  \
+      \  if Channel_Phase==28.125:\n        spi.xfer2([ADDR, I, 0x3C])\n        spi.xfer2([ADDR,\
+      \ Q, 0x2E])\n    if Channel_Phase==30.9375:\n        spi.xfer2([ADDR, I, 0x3B])\n\
+      \        spi.xfer2([ADDR, Q, 0x2F])\n    if Channel_Phase==33.75:\n        spi.xfer2([ADDR,\
+      \ I, 0x3A])\n        spi.xfer2([ADDR, Q, 0x30])\n    if Channel_Phase==36.5625:\n\
+      \        spi.xfer2([ADDR, I, 0x39])\n        spi.xfer2([ADDR, Q, 0x31])\n  \
+      \  if Channel_Phase==39.375:\n        spi.xfer2([ADDR, I, 0x38])\n        spi.xfer2([ADDR,\
+      \ Q, 0x33])\n    if Channel_Phase==42.1875:\n        spi.xfer2([ADDR, I, 0x37])\n\
+      \        spi.xfer2([ADDR, Q, 0x34])\n    if Channel_Phase==45:\n        spi.xfer2([ADDR,\
+      \ I, 0x36])\n        spi.xfer2([ADDR, Q, 0x35])\n    if Channel_Phase==47.8125:\n\
+      \        spi.xfer2([ADDR, I, 0x35])\n        spi.xfer2([ADDR, Q, 0x36])\n  \
+      \  if Channel_Phase==50.625:\n        spi.xfer2([ADDR, I, 0x34])\n        spi.xfer2([ADDR,\
+      \ Q, 0x37])\n    if Channel_Phase==53.4375:\n        spi.xfer2([ADDR, I, 0x33])\n\
+      \        spi.xfer2([ADDR, Q, 0x38])\n    if Channel_Phase==56.25:\n        spi.xfer2([ADDR,\
+      \ I, 0x32])\n        spi.xfer2([ADDR, Q, 0x38])\n    if Channel_Phase==59.0625:\n\
+      \        spi.xfer2([ADDR, I, 0x30])\n        spi.xfer2([ADDR, Q, 0x39])\n  \
+      \  if Channel_Phase==61.875:\n        spi.xfer2([ADDR, I, 0x2F])\n        spi.xfer2([ADDR,\
+      \ Q, 0x3A])\n    if Channel_Phase==64.6875:\n        spi.xfer2([ADDR, I, 0x2E])\n\
+      \        spi.xfer2([ADDR, Q, 0x3A])\n    if Channel_Phase==67.5:\n        spi.xfer2([ADDR,\
+      \ I, 0x2C])\n        spi.xfer2([ADDR, Q, 0x3B])\n    if Channel_Phase==70.3125:\n\
+      \        spi.xfer2([ADDR, I, 0x2B])\n        spi.xfer2([ADDR, Q, 0x3C])\n  \
+      \  if Channel_Phase==73.125:\n        spi.xfer2([ADDR, I, 0x2A])\n        spi.xfer2([ADDR,\
+      \ Q, 0x3C])\n    if Channel_Phase==75.9375:\n        spi.xfer2([ADDR, I, 0x28])\n\
+      \        spi.xfer2([ADDR, Q, 0x3C])\n    if Channel_Phase==78.75:\n        spi.xfer2([ADDR,\
+      \ I, 0x27])\n        spi.xfer2([ADDR, Q, 0x3D])\n    if Channel_Phase==81.5625:\n\
+      \        spi.xfer2([ADDR, I, 0x25])\n        spi.xfer2([ADDR, Q, 0x3D])\n  \
+      \  if Channel_Phase==84.375:\n        spi.xfer2([ADDR, I, 0x24])\n        spi.xfer2([ADDR,\
+      \ Q, 0x3D])\n    if Channel_Phase==87.1875:\n        spi.xfer2([ADDR, I, 0x22])\n\
+      \        spi.xfer2([ADDR, Q, 0x3D])\n# Quadrant 2\n    if Channel_Phase==90:\n\
+      \        spi.xfer2([ADDR, I, 0x21])\n        spi.xfer2([ADDR, Q, 0x3D])\n  \
+      \  if Channel_Phase==92.8125:\n        spi.xfer2([ADDR, I, 0x01])\n        spi.xfer2([ADDR,\
+      \ Q, 0x3D])\n    if Channel_Phase==95.625:\n        spi.xfer2([ADDR, I, 0x03])\n\
+      \        spi.xfer2([ADDR, Q, 0x3D])\n    if Channel_Phase==98.4375:\n      \
+      \  spi.xfer2([ADDR, I, 0x04])\n        spi.xfer2([ADDR, Q, 0x3D])\n    if Channel_Phase==101.25:\n\
+      \        spi.xfer2([ADDR, I, 0x06])\n        spi.xfer2([ADDR, Q, 0x3D])\n  \
+      \  if Channel_Phase==104.0625:\n        spi.xfer2([ADDR, I, 0x07])\n       \
+      \ spi.xfer2([ADDR, Q, 0x3C])\n    if Channel_Phase==106.875:\n        spi.xfer2([ADDR,\
+      \ I, 0x08])\n        spi.xfer2([ADDR, Q, 0x3C])\n    if Channel_Phase==109.6875:\n\
+      \        spi.xfer2([ADDR, I, 0x0A])\n        spi.xfer2([ADDR, Q, 0x3C])\n  \
+      \  if Channel_Phase==112.5:\n        spi.xfer2([ADDR, I, 0x0B])\n        spi.xfer2([ADDR,\
+      \ Q, 0x3B])\n    if Channel_Phase==115.3125:\n        spi.xfer2([ADDR, I, 0x0D])\n\
+      \        spi.xfer2([ADDR, Q, 0x3A])\n    if Channel_Phase==118.125:\n      \
+      \  spi.xfer2([ADDR, I, 0x0E])\n        spi.xfer2([ADDR, Q, 0x3A])\n    if Channel_Phase==120.9375:\n\
+      \        spi.xfer2([ADDR, I, 0x0F])\n        spi.xfer2([ADDR, Q, 0x39])\n  \
+      \  if Channel_Phase==123.75:\n        spi.xfer2([ADDR, I, 0x11])\n        spi.xfer2([ADDR,\
+      \ Q, 0x38])\n    if Channel_Phase==126.5625:\n        spi.xfer2([ADDR, I, 0x12])\n\
+      \        spi.xfer2([ADDR, Q, 0x38])\n    if Channel_Phase==129.375:\n      \
+      \  spi.xfer2([ADDR, I, 0x13])\n        spi.xfer2([ADDR, Q, 0x37])\n    if Channel_Phase==132.1875:\n\
+      \        spi.xfer2([ADDR, I, 0x14])\n        spi.xfer2([ADDR, Q, 0x36])\n  \
+      \  if Channel_Phase==135:\n        spi.xfer2([ADDR, I, 0x16])\n        spi.xfer2([ADDR,\
+      \ Q, 0x35])\n    if Channel_Phase==137.8125:\n        spi.xfer2([ADDR, I, 0x17])\n\
+      \        spi.xfer2([ADDR, Q, 0x34])\n    if Channel_Phase==140.625:\n      \
+      \  spi.xfer2([ADDR, I, 0x18])\n        spi.xfer2([ADDR, Q, 0x33])\n    if Channel_Phase==143.4375:\n\
+      \        spi.xfer2([ADDR, I, 0x19])\n        spi.xfer2([ADDR, Q, 0x31])\n  \
+      \  if Channel_Phase==146.25:\n        spi.xfer2([ADDR, I, 0x19])\n        spi.xfer2([ADDR,\
+      \ Q, 0x30])\n    if Channel_Phase==149.0625:\n        spi.xfer2([ADDR, I, 0x1A])\n\
+      \        spi.xfer2([ADDR, Q, 0x2F])\n    if Channel_Phase==151.875:\n      \
+      \  spi.xfer2([ADDR, I, 0x1B])\n        spi.xfer2([ADDR, Q, 0x2E])\n    if Channel_Phase==154.6875:\n\
+      \        spi.xfer2([ADDR, I, 0x1C])\n        spi.xfer2([ADDR, Q, 0x2D])\n  \
+      \  if Channel_Phase==157.5:\n        spi.xfer2([ADDR, I, 0x1C])\n        spi.xfer2([ADDR,\
+      \ Q, 0x2B])\n    if Channel_Phase==160.3125:\n        spi.xfer2([ADDR, I, 0x1D])\n\
+      \        spi.xfer2([ADDR, Q, 0x2A])\n    if Channel_Phase==163.125:\n      \
+      \  spi.xfer2([ADDR, I, 0X1E])\n        spi.xfer2([ADDR, Q, 0x28])\n    if Channel_Phase==165.9375:\n\
+      \        spi.xfer2([ADDR, I, 0x1E])\n        spi.xfer2([ADDR, Q, 0x27])\n  \
+      \  if Channel_Phase==168.75:\n        spi.xfer2([ADDR, I, 0x1E])\n        spi.xfer2([ADDR,\
+      \ Q, 0x26])\n    if Channel_Phase==171.5625:\n        spi.xfer2([ADDR, I, 0x1F])\n\
+      \        spi.xfer2([ADDR, Q, 0x24])\n    if Channel_Phase==174.375:\n      \
+      \  spi.xfer2([ADDR, I, 0x1F])\n        spi.xfer2([ADDR, Q, 0x23])\n    if Channel_Phase==177.1875:\n\
+      \        spi.xfer2([ADDR, I, 0x1F])\n        spi.xfer2([ADDR, Q, 0x21])\n# Quadrant\
+      \ 3\n    if Channel_Phase==180:\n        spi.xfer2([ADDR, I, 0x1F])\n      \
+      \  spi.xfer2([ADDR, Q, 0x20])\n    if Channel_Phase==182.8125:\n        spi.xfer2([ADDR,\
+      \ I, 0x1F])\n        spi.xfer2([ADDR, Q, 0x20])\n    if Channel_Phase==185.625:\n\
+      \        spi.xfer2([ADDR, I, 0x1F])\n        spi.xfer2([ADDR, Q, 0x03])\n  \
+      \  if Channel_Phase==188.4375:\n        spi.xfer2([ADDR, I, 0x1F])\n       \
+      \ spi.xfer2([ADDR, Q, 0x04])\n    if Channel_Phase==191.25:\n        spi.xfer2([ADDR,\
+      \ I, 0x1F])\n        spi.xfer2([ADDR, Q, 0x06])\n    if Channel_Phase==194.0625:\n\
+      \        spi.xfer2([ADDR, I, 0x1E])\n        spi.xfer2([ADDR, Q, 0x07])\n  \
+      \  if Channel_Phase==196.875:\n        spi.xfer2([ADDR, I, 0x1E])\n        spi.xfer2([ADDR,\
+      \ Q, 0x08])\n    if Channel_Phase==199.6875:\n        spi.xfer2([ADDR, I, 0x1D])\n\
+      \        spi.xfer2([ADDR, Q, 0x0A])\n    if Channel_Phase==202.5:\n        spi.xfer2([ADDR,\
+      \ I, 0x1D])\n        spi.xfer2([ADDR, Q, 0x0B])\n    if Channel_Phase==205.3125:\n\
+      \        spi.xfer2([ADDR, I, 0x1C])\n        spi.xfer2([ADDR, Q, 0x0D])\n  \
+      \  if Channel_Phase==208.125:\n        spi.xfer2([ADDR, I, 0x1C])\n        spi.xfer2([ADDR,\
+      \ Q, 0x0E])\n    if Channel_Phase==210.9375:\n        spi.xfer2([ADDR, I, 0x1B])\n\
+      \        spi.xfer2([ADDR, Q, 0x0F])\n    if Channel_Phase==213.75:\n       \
+      \ spi.xfer2([ADDR, I, 0x1A])\n        spi.xfer2([ADDR, Q, 0x10])\n    if Channel_Phase==216.5625:\n\
+      \        spi.xfer2([ADDR, I, 0x19])\n        spi.xfer2([ADDR, Q, 0x11])\n  \
+      \  if Channel_Phase==219.375:\n        spi.xfer2([ADDR, I, 0x18])\n        spi.xfer2([ADDR,\
+      \ Q, 0x13])\n    if Channel_Phase==222.1875:\n        spi.xfer2([ADDR, I, 0x17])\n\
+      \        spi.xfer2([ADDR, Q, 0x14])\n    if Channel_Phase==225:\n        spi.xfer2([ADDR,\
+      \ I, 0x16])\n        spi.xfer2([ADDR, Q, 0x15])\n    if Channel_Phase==227.8125:\n\
+      \        spi.xfer2([ADDR, I, 0x15])\n        spi.xfer2([ADDR, Q, 0x16])\n  \
+      \  if Channel_Phase==230.625:\n        spi.xfer2([ADDR, I, 0x14])\n        spi.xfer2([ADDR,\
+      \ Q, 0x17])\n    if Channel_Phase==233.4375:\n        spi.xfer2([ADDR, I, 0x13])\n\
+      \        spi.xfer2([ADDR, Q, 0x18])\n    if Channel_Phase==236.25:\n       \
+      \ spi.xfer2([ADDR, I, 0x12])\n        spi.xfer2([ADDR, Q, 0x18])\n    if Channel_Phase==239.0625:\n\
+      \        spi.xfer2([ADDR, I, 0x10])\n        spi.xfer2([ADDR, Q, 0x19])\n  \
+      \  if Channel_Phase==241.875:\n        spi.xfer2([ADDR, I, 0x0F])\n        spi.xfer2([ADDR,\
+      \ Q, 0x1A])\n    if Channel_Phase==244.6875:\n        spi.xfer2([ADDR, I, 0x0E])\n\
+      \        spi.xfer2([ADDR, Q, 0x1A])\n    if Channel_Phase==247.5:\n        spi.xfer2([ADDR,\
+      \ I, 0x0C])\n        spi.xfer2([ADDR, Q, 0x1B])\n    if Channel_Phase==250.3125:\n\
+      \        spi.xfer2([ADDR, I, 0x0B])\n        spi.xfer2([ADDR, Q, 0x1C])\n  \
+      \  if Channel_Phase==253.125:\n        spi.xfer2([ADDR, I, 0x0A])\n        spi.xfer2([ADDR,\
+      \ Q, 0x1C])\n    if Channel_Phase==255.9375:\n        spi.xfer2([ADDR, I, 0x08])\n\
+      \        spi.xfer2([ADDR, Q, 0x1C])\n    if Channel_Phase==258.75:\n       \
+      \ spi.xfer2([ADDR, I, 0x07])\n        spi.xfer2([ADDR, Q, 0x1D])\n    if Channel_Phase==261.5625:\n\
+      \        spi.xfer2([ADDR, I, 0x05])\n        spi.xfer2([ADDR, Q, 0x1D])\n  \
+      \  if Channel_Phase==264.375:\n        spi.xfer2([ADDR, I, 0x04])\n        spi.xfer2([ADDR,\
+      \ Q, 0x1D])\n    if Channel_Phase==267.1875:\n        spi.xfer2([ADDR, I, 0x02])\n\
+      \        spi.xfer2([ADDR, Q, 0x1D])\n# Quadrant 4\n    if Channel_Phase==270:\n\
+      \        spi.xfer2([ADDR, I, 0x01])\n        spi.xfer2([ADDR, Q, 0x1D])\n  \
+      \  if Channel_Phase==272.8125:\n        spi.xfer2([ADDR, I, 0x21])\n       \
+      \ spi.xfer2([ADDR, Q, 0x1D])\n    if Channel_Phase==275.625:\n        spi.xfer2([ADDR,\
+      \ I, 0x23])\n        spi.xfer2([ADDR, Q, 0x1D])\n    if Channel_Phase==278.4375:\n\
+      \        spi.xfer2([ADDR, I, 0x24])\n        spi.xfer2([ADDR, Q, 0x1D])\n  \
+      \  if Channel_Phase==281.25:\n        spi.xfer2([ADDR, I, 0x26])\n        spi.xfer2([ADDR,\
+      \ Q, 0x1D])\n    if Channel_Phase==284.0625:\n        spi.xfer2([ADDR, I, 0x27])\n\
+      \        spi.xfer2([ADDR, Q, 0x1C])\n    if Channel_Phase==286.875:\n      \
+      \  spi.xfer2([ADDR, I, 0x28])\n        spi.xfer2([ADDR, Q, 0x1C])\n    if Channel_Phase==289.6875:\n\
+      \        spi.xfer2([ADDR, I, 0x2A])\n        spi.xfer2([ADDR, Q, 0x1C])\n  \
+      \  if Channel_Phase==292.5:\n        spi.xfer2([ADDR, I, 0x2B])\n        spi.xfer2([ADDR,\
+      \ Q, 0x1B])\n    if Channel_Phase==295.3125:\n        spi.xfer2([ADDR, I, 0x2D])\n\
+      \        spi.xfer2([ADDR, Q, 0x1A])\n    if Channel_Phase==298.125:\n      \
+      \  spi.xfer2([ADDR, I, 0x2E])\n        spi.xfer2([ADDR, Q, 0x1A])\n    if Channel_Phase==300.9375:\n\
+      \        spi.xfer2([ADDR, I, 0x2F])\n        spi.xfer2([ADDR, Q, 0x19])\n  \
+      \  if Channel_Phase==303.75:\n        spi.xfer2([ADDR, I, 0x31])\n        spi.xfer2([ADDR,\
+      \ Q, 0x18])\n    if Channel_Phase==306.5625:\n        spi.xfer2([ADDR, I, 0x32])\n\
+      \        spi.xfer2([ADDR, Q, 0x18])\n    if Channel_Phase==309.375:\n      \
+      \  spi.xfer2([ADDR, I, 0x33])\n        spi.xfer2([ADDR, Q, 0x17])\n    if Channel_Phase==312.1875:\n\
+      \        spi.xfer2([ADDR, I, 0x34])\n        spi.xfer2([ADDR, Q, 0x16])\n  \
+      \  if Channel_Phase==315:\n        spi.xfer2([ADDR, I, 0x36])\n        spi.xfer2([ADDR,\
+      \ Q, 0x15])\n    if Channel_Phase==317.8125:\n        spi.xfer2([ADDR, I, 0x37])\n\
+      \        spi.xfer2([ADDR, Q, 0x14])\n    if Channel_Phase==320.625:\n      \
+      \  spi.xfer2([ADDR, I, 0x38])\n        spi.xfer2([ADDR, Q, 0x13])\n    if Channel_Phase==323.4375:\n\
+      \        spi.xfer2([ADDR, I, 0x39])\n        spi.xfer2([ADDR, Q, 0x11])\n  \
+      \  if Channel_Phase==326.25:\n        spi.xfer2([ADDR, I, 0x39])\n        spi.xfer2([ADDR,\
+      \ Q, 0x10])\n    if Channel_Phase==329.0625:\n        spi.xfer2([ADDR, I, 0x3A])\n\
+      \        spi.xfer2([ADDR, Q, 0x0F])\n    if Channel_Phase==331.875:\n      \
+      \  spi.xfer2([ADDR, I, 0x3B])\n        spi.xfer2([ADDR, Q, 0x0E])\n    if Channel_Phase==334.6875:\n\
+      \        spi.xfer2([ADDR, I, 0x3C])\n        spi.xfer2([ADDR, Q, 0x0D])\n  \
+      \  if Channel_Phase==337.5:\n        spi.xfer2([ADDR, I, 0x3C])\n        spi.xfer2([ADDR,\
+      \ Q, 0x0B])\n    if Channel_Phase==340.3125:\n        spi.xfer2([ADDR, I, 0x3D])\n\
+      \        spi.xfer2([ADDR, Q, 0x0A])\n    if Channel_Phase==343.125:\n      \
+      \  spi.xfer2([ADDR, I, 0x3E])\n        spi.xfer2([ADDR, Q, 0x08])\n    if Channel_Phase==345.9375:\n\
+      \        spi.xfer2([ADDR, I, 0x3E])\n        spi.xfer2([ADDR, Q, 0x07])\n  \
+      \  if Channel_Phase==348.75:\n        spi.xfer2([ADDR, I, 0x3E])\n        spi.xfer2([ADDR,\
+      \ Q, 0x06])\n    if Channel_Phase==351.5625:\n        spi.xfer2([ADDR, I, 0x3F])\n\
+      \        spi.xfer2([ADDR, Q, 0x04])\n    if Channel_Phase==354.375:\n      \
+      \  spi.xfer2([ADDR, I, 0x3F])\n        spi.xfer2([ADDR, Q, 0x03])\n    if Channel_Phase==357.1875:\n\
+      \        spi.xfer2([ADDR, I, 0x3F])\n        spi.xfer2([ADDR, Q, 0x01])\n\n\n\
+      class blk(gr.sync_block):  # other base classes are basic_block, decim_block,\
+      \ interp_block\n\n    def __init__(self, SDR_ip='ip:192.168.2.1', LO_freq=2400000000,\
+      \ TX_freq=5810000000, SampleRate=3000000, Rx_gain=30, Averages=1, Taper=1, SymTaper=0,\
+      \ PhaseCal=0, SignalFreq=10525000000, RxGain1=127, RxGain2=127, RxGain3=127,\
+      \ RxGain4=127, Rx1_cal=0, Rx2_cal=0, Rx3_cal=0, Rx4_cal=0):  \n        \"\"\"\
+      arguments to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='ADAR1000 Sweeper',   # will show up in\
+      \ GRC\n            in_sig=[],\n            out_sig=[np.complex64, np.float32]\n\
+      \        )\n        #sdr_address = 'ip:192.168.2.1'     # This is the default\
+      \ address for Pluto\n        sdr_address = str(SDR_ip)\n        self.LO_freq\
+      \ = LO_freq              # RX LO freq\n        self.TX_freq = TX_freq      \
+      \        # TX LO freq\n        self.SampleRate = SampleRate\n        self.Rx_gain\
+      \ = Rx_gain\n        self.Averages = Averages\n        self.Taper = Taper\n\
+      \        self.SymTaper = SymTaper\n        self.PhaseCal = PhaseCal\n      \
+      \  self.RxGain1 = RxGain1\n        self.RxGain2 = RxGain2\n        self.RxGain3\
+      \ = RxGain3\n        self.RxGain4 = RxGain4\n        self.Rx1_cal=Rx1_cal\n\
+      \        self.Rx2_cal=Rx2_cal\n        self.Rx3_cal=Rx3_cal\n        self.Rx4_cal=Rx4_cal\n\
+      \                       \n        self.spi = spidev.SpiDev()\n        self.spi.open(0,\
+      \ 0)  #set bus=0 and device=0\n        self.spi.max_speed_hz = 500000\n    \
+      \    self.spi.mode = 0\n\n        # The ADDR is set by the address pins on the\
+      \ ADAR1000.  This is set by P10 on the eval board.\n        self.ADDR1=0x20\
+      \            # ADDR 0x20 is set by jumpering pins 4 and 6 on P10\n        #self.ADDR1=0x00\
+      \           # ADDR 0x00 is set by leaving all jumpers off of P10\n        #self.ADDR2\
+      \ = 0x40\n        ADAR_init(self.spi, self.ADDR1)\n        #ADAR_init(self.spi,\
+      \ self.ADDR1)\n        \n        self.c = 299792458    # speed of light in m/s\n\
+      \        self.d = 0.015        # element to element spacing of the antenna\n\
+      \        self.SignalFreq = SignalFreq\n\n        '''Setup SDR Context and Configure\
+      \ Settings'''\n        import adi\n        #self.sdr=adi.Pluto()     #This finds\
+      \ pluto over usb.  But communicating with its ip address gives us more flexibility\n\
+      \        self.sdr=adi.Pluto(uri=sdr_address)      #This finds the device at\
+      \ that ip address\n        self.sdr._rxadc.set_kernel_buffers_count(1)   #Default\
+      \ is 4 Rx buffers are stored, but we want to change and immediately measure\
+      \ the result, so buffers=1\n        rx = self.sdr._ctrl.find_channel('voltage0')\
+      \ \n        rx.attrs['quadrature_tracking_en'].value = '0'   # set to '1' to\
+      \ enable quadrature tracking\n        self.sdr.sample_rate = int(self.SampleRate)\n\
+      \        #self.sdr.filter = \"/home/pi/Documents/PlutoFilters/samprate_40p0.ftr\"\
+      \  #pyadi-iio auto applies filters based on sample rate\n        #self.sdr.rx_rf_bandwidth\
+      \ = int(1000000)\n        #self.sdr.tx_rf_bandwidth = int(500000)\n        self.sdr.rx_buffer_size\
+      \ = int(1*256)    # We only need a few samples to get the gain.  And a small\
+      \ buffer will greatly speed up the sweep.  It also reduces the size of our fft\
+      \ freq bins, giving an averaging effect\n        self.sdr.tx_lo = int(self.TX_freq)\n\
+      \        self.sdr.tx_cyclic_buffer = True\n        self.sdr.tx_buffer_size =\
+      \ int(2**18)\n        self.sdr.tx_hardwaregain_chan0 = -10\n        #self.sdr.dds_enabled\
+      \ = [1, 1, 1, 1]                  #DDS generator enable state\n        #self.sdr.dds_frequencies\
+      \ = [0.1e6, 0.1e6, 0.1e6, 0.1e6]      #Frequencies of DDSs in Hz\n        #self.sdr.dds_scales\
+      \ = [1, 1, 0, 0]                   #Scale of DDS signal generators Ranges [0,1]\
+      \            \n        self.sdr.dds_single_tone(int(0.0e6), 0.9, 0)    # sdr.dds_single_tone(tone_freq_hz,\
+      \ tone_scale_0to1, tx_channel)\n        self.sdr.gain_control_mode_chan0 = \"\
+      manual\"                #We must be in manual gain control mode (otherwise we\
+      \ won't see the peaks and nulls!)\n        self.sdr.rx_lo = int(self.LO_freq)\n\
+      \        self.sdr.rx_hardwaregain_chan0 = int(self.Rx_gain)\n        print(self.sdr)\n\
+      \n\n    def work(self, input_items, output_items):\n        \n        self.sdr.rx_lo\
+      \ = int(self.LO_freq)\n        self.sdr.rx_hardwaregain_chan0 = int(self.Rx_gain)\n\
+      \       \n        if self.Taper==0:\n            if self.SymTaper==0:\n    \
+      \            Gain4=self.RxGain4  # Sets Rx4 VGA gain\n            else:\n  \
+      \              Gain4=self.RxGain1  # Sets Rx4 VGA gain\n            ADAR_set_RxTaper(self.spi,\
+      \ self.ADDR1, self.RxGain1, self.RxGain2, self.RxGain3, Gain4)\n        else:\n\
+      \            ADAR_set_RxTaper(self.spi, self.ADDR1, 127, 127, 127, 127)\n  \
+      \      \n        if self.PhaseCal == 0:\n            Rx1_Phase_Cal = self.Rx1_cal\n\
+      \            Rx2_Phase_Cal = self.Rx2_cal\n            Rx3_Phase_Cal = self.Rx3_cal\n\
+      \            Rx4_Phase_Cal = self.Rx4_cal\n        else:\n            Rx1_Phase_Cal\
+      \ = 0\n            Rx2_Phase_Cal = 0\n            Rx3_Phase_Cal = 0\n      \
+      \      Rx4_Phase_Cal = 0\n\n        phase_step_size = 2.8125\n        PhaseValues\
+      \ = np.arange(-196.875, 196.875, phase_step_size)   # These are all the phase\
+      \ deltas (i.e. phase difference between Rx1 and Rx2, then Rx2 and Rx3, etc.)\
+      \ we'll sweep.     \n        PhaseStepNumber=0    # this is the number of phase\
+      \ steps we'll take (140 in total).  At each phase step, we set the individual\
+      \ phases of each of the Rx channels\n        gain = []\n        angle = []\n\
+      \        max_signal = -100    # Reset max_signal.  We'll keep track of the maximum\
+      \ signal we get as we do this 140 loop.  \n        max_angle = 0        # Reset\
+      \ max_angle.  This is the angle where we saw the max signal.  This is where\
+      \ our compass will point.\n        for PhDelta in PhaseValues:\n           \
+      \ ADAR_set_RxPhase(self.spi, self.ADDR1, 1, PhDelta, phase_step_size, Rx1_Phase_Cal,\
+      \ Rx2_Phase_Cal, Rx3_Phase_Cal, Rx4_Phase_Cal)\n            #if self.num_ADARs\
+      \ == 2:\n            #    ADAR_set_RxPhase(spi, self.ADDR2, 2, PhDelta, phase_step_size,\
+      \ Rx5_Phase_Cal, Rx6_Phase_Cal, Rx7_Phase_Cal, Rx8_Phase_Cal)\n            #\
+      \ steering angle theta = arcsin(c*deltaphase/(2*pi*f*d)\n            value1\
+      \ = (self.c * np.radians(np.abs(PhDelta)))/(2*3.14159*self.SignalFreq*self.d)\n\
+      \            clamped_value1 = max(min(1, value1), -1)     #arcsin argument must\
+      \ be between 1 and -1, or numpy will throw a warning\n            theta = np.degrees(np.arcsin(clamped_value1))\n\
+      \            if PhDelta>=0:\n                SteerAngle = theta   # positive\
+      \ PhaseDelta covers 0deg to 90 deg\n            else:\n                SteerAngle\
+      \ = -theta   # negative phase delta covers 0 deg to -90 deg\n    \n        \
+      \    total = 0\n            for count in range (0, self.Averages):\n       \
+      \         data=self.sdr.rx() \n                NumSamples = len(data)      \
+      \    #number of samples\n                win = np.hamming(NumSamples)\n    \
+      \            y = data * win\n                sp = np.absolute(np.fft.fft(y))\n\
+      \                sp = sp[1:-1]\n                sp = np.fft.fftshift(sp)\n \
+      \               s_mag = np.abs(sp) * 2 / np.sum(win)\n                try:\n\
+      \                    s_dbfs = 20*np.log10(s_mag/(2**12))  # if Pluto gives bad\
+      \ data (i.e. connection problem), then this coudl be a divide by zero--which\
+      \ can crash GNUradio\n                except:\n                    s_dbfs =\
+      \ -100\n                total=total+max(s_dbfs)   # sum up all the loops, then\
+      \ we'll average\n            PeakValue=total/self.Averages\n            \n \
+      \           if PeakValue>max_signal:    #take the largest value, so that we\
+      \ know where to point the compass\n                max_signal=PeakValue\n  \
+      \              max_angle=SteerAngle\n                \n            output_items[0][PhaseStepNumber]=((1)*SteerAngle\
+      \ + (1j * PeakValue))  # output this as a complex number so we can do an x-y\
+      \ plot with the constellation graph\n            PhaseStepNumber=PhaseStepNumber+1\
+      \    # increment the phase delta and start this whole thing again.  This will\
+      \ repeat 140 times\n\n        output_items[0]=output_items[0][0:PhaseStepNumber]\n\
+      \        output_items[1][:] = max_angle * (1)\n        \n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('ADAR1000 Sweeper', 'blk', [('SDR_ip', "'ip:192.168.2.1'"), ('LO_freq',
+      '2400000000'), ('TX_freq', '5810000000'), ('SampleRate', '3000000'), ('Rx_gain',
+      '30'), ('Averages', '1'), ('Taper', '1'), ('SymTaper', '0'), ('PhaseCal', '0'),
+      ('SignalFreq', '10525000000'), ('RxGain1', '127'), ('RxGain2', '127'), ('RxGain3',
+      '127'), ('RxGain4', '127'), ('Rx1_cal', '0'), ('Rx2_cal', '0'), ('Rx3_cal',
+      '0'), ('Rx4_cal', '0')], [], [('0', 'complex', 1), ('1', 'float', 1)], 'arguments
+      to this function show up as parameters in GRC', ['Averages', 'LO_freq', 'PhaseCal',
+      'Rx1_cal', 'Rx2_cal', 'Rx3_cal', 'Rx4_cal', 'RxGain1', 'RxGain2', 'RxGain3',
+      'RxGain4', 'Rx_gain', 'SampleRate', 'SignalFreq', 'SymTaper', 'TX_freq', 'Taper'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [22, 298]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'True'
+    gui_hint: 0,2,5,3
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'False'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"Peak Signal vs Steering Angle"'
+    nconnections: '1'
+    size: '140'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '80'
+    xmin: '-80'
+    ymax: '0'
+    ymin: '-50'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [278, 303]
+    rotation: 0
+    state: enabled
+- name: qtgui_number_sink_0
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '1'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_HORIZ
+    gui_hint: 5, 2
+    label1: '   '
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    max: '80'
+    min: '-80'
+    name: Elevation
+    nconnections: '1'
+    type: float
+    unit1: deg
+    unit10: ''
+    unit2: ''
+    unit3: ''
+    unit4: ''
+    unit5: ''
+    unit6: ''
+    unit7: ''
+    unit8: ''
+    unit9: ''
+    update_time: '0.1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [789, 480]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_moving_average_xx_0, '0', qtgui_number_sink_0, '0']
+- [blocks_throttle_0, '0', blocks_moving_average_xx_0, '0']
+- [epy_block_0, '0', qtgui_const_sink_x_0, '0']
+- [epy_block_0, '1', blocks_throttle_0, '0']
+
+metadata:
+  file_format: 1
