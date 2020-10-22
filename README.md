@@ -1,4 +1,5 @@
 # PhasedArray
+(GNU Radio 2020 Workshop presentation can be viewed here:  https://youtu.be/0hnWfTvETcU)
 
 Phased array beamformers are very powerful! And they find applications in 5G MIMO, FMCW radar, and satellite communications. But their underlying principles and issues can be hard to intuitively grasp. But with the instructions and explanations here, you can build an easy to use system that allows you to experience the underlying math and principles of beamformers.  With this setup, you'll track an RF source, plot its beam characteristics and learn of the features integrated into modern beamformer ICs. It is a hands-on way to learn about steering angle, beam width, null locations, beam tapering, grating lobes, and beam squint.  
 
